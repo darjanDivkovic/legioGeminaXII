@@ -168,7 +168,7 @@ const Offer = () => {
                 <hr className="bg-white w-[30%] mx-auto my-2 mt-6 heading-middle opacity-0" />
                 <p className="text-white mt-2 text-[16px] font-Julius heading-two opacity-0">You are invited to join, the best</p>
 
-                <div className="h-[145px] w-[165px] mx-auto z-10 logo opacity-0">
+                <div className="h-[165px] w-[185px] mx-auto z-10 logo opacity-0">
                     <img src={Logo} alt='+' className="w-full h-full" />
                 </div>
 

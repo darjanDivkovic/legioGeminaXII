@@ -105,16 +105,10 @@ const Offer = () => {
         const inputDate = new Date(dateString);
         const currentDate = new Date();
         const timeDifference = currentDate - inputDate;
-        const millisecondsInYear = 1000 * 60 * 60 * 24 * 365.25;
-        const yearsPassed = timeDifference / millisecondsInYear;
-        const roundedYears = Math.round(yearsPassed * 10) / 10;
+        const millisecondsInDay = 1000 * 60 * 60 * 24;
+        const daysPassed = Math.round(timeDifference / millisecondsInDay);
 
-        if (roundedYears >= 1) {
-            return `${roundedYears}Y`;
-        } else {
-            const monthsPassed = Math.round(roundedYears * 12);
-            return `${monthsPassed}M`;
-        }
+        return `${daysPassed} days`;
     }
 
     const time_since_join = calculateTimePassedFormatted(userData?.date_joined)
@@ -270,7 +264,7 @@ const Offer = () => {
                                 <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
                                     <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
                                     <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">{time_since_join}</p>
-                                    <p className="font-Julius text-[#CB9A68] text-shadow">Served For</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">You Served For</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
                                     <div className="w-[30px] h-[30px] time-on-small"><Rank /></div>

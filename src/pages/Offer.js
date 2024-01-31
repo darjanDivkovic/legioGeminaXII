@@ -79,8 +79,9 @@ const Offer = () => {
 
 
     const getOfferByID = async (id) => {
+        const BASE_URL = "https://forum-gladiatora-api-71bf050544da.herokuapp.com"
         try {
-            const result = await axios.get(`http://127.0.0.1:8000/offer/${id}/`, { id })
+            const result = await axios.get(`${BASE_URL}/offer/${id}/`, { id })
             setUserData(result.data)
         } catch (err) {
 

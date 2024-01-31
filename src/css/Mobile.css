@@ -19,6 +19,14 @@
         font-size: 12px !important;
     }
 
+    .heading-on-low {
+        margin-top: 50px !important;
+    }
+
+    .h-smal {
+        font-size: 10px !important;
+    }
+
     .mobile-knowledge {
         margin-top: 12px !important;
     }
@@ -32,7 +40,9 @@
     }
 
     .smaller-text {
-        font-size: 8px !important;
+        font-size: 12px !important;
+        width: 200% !important;
+        margin-left: -50%;
     }
 
     .helmet-on-small {

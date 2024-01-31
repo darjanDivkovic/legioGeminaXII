@@ -10,12 +10,14 @@ import MachusR from '../assets/machus-r.png';
 
 import Online from '../assets/Online'
 import Members from '../assets/Members'
+import Rank from '../assets/Rank'
 import Divine from '../assets/Divine'
 import Knowledge from '../assets/Knowledge'
 
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
+import classNames from "classnames";
 
 const Offer = () => {
     const [userData, setUserData] = useState({})
@@ -52,7 +54,7 @@ const Offer = () => {
         gsap.to('.logo', { delay: 3.2, duration: 0.4, opacity: 1, y: '-35px', ease: 'power1.inOut' });
         gsap.to('.clan', { delay: 3.2, duration: 0.4, opacity: 1, y: '-45px', ease: 'power1.inOut' });
         gsap.to('.accept-btn', { delay: 3.2, duration: 0.4, opacity: 1, y: '-10px', ease: 'power1.inOut' })
-        gsap.to('.heading-last', { delay: 6.8, duration: 0.4, opacity: 0.6, ease: 'power1.inOut' })
+        gsap.to('.heading-last', { delay: 6.4, duration: 0.4, opacity: 0.6, ease: 'power1.inOut' })
         gsap.to('.bottom-box', { delay: 3.8, duration: 0.5, opacity: 1, bottom: '0px', ease: 'power1.inOut' })
 
         gsap.to('.card1', { delay: 4.5, duration: 0.4, opacity: 1, bottom: '0px', ease: 'power1.inOut' })
@@ -84,6 +86,7 @@ const Offer = () => {
         const BASE_URL = "https://forum-gladiatora-api-71bf050544da.herokuapp.com"
         try {
             const result = await axios.get(`${BASE_URL}/offer/${id.toUpperCase()}/`, { id })
+            console.log('result data', result.data)
             setUserData(result.data)
         } catch (err) {
 
@@ -97,6 +100,24 @@ const Offer = () => {
     }
 
     console.log('user', userData)
+
+    function calculateTimePassedFormatted(dateString) {
+        const inputDate = new Date(dateString);
+        const currentDate = new Date();
+        const timeDifference = currentDate - inputDate;
+        const millisecondsInYear = 1000 * 60 * 60 * 24 * 365.25;
+        const yearsPassed = timeDifference / millisecondsInYear;
+        const roundedYears = Math.round(yearsPassed * 10) / 10;
+
+        if (roundedYears >= 1) {
+            return `${roundedYears}Y`;
+        } else {
+            const monthsPassed = Math.round(roundedYears * 12);
+            return `${monthsPassed}M`;
+        }
+    }
+
+    const time_since_join = calculateTimePassedFormatted(userData?.date_joined)
 
     return (
         <div className="App overflow-hidden">
@@ -169,18 +190,45 @@ const Offer = () => {
                 </div>
                 <p className="text-white mt-24 text-[40px] font-Julius heading-one opacity-0">Ave, {userData?.recipient_name}</p>
                 <hr className="bg-white w-[30%] mx-auto my-2 mt-6 heading-middle opacity-0" />
-                <p className="text-white mt-2 text-[16px] font-Julius heading-two opacity-0">You are invited to join, the best</p>
+                <p className="text-white mt-2 text-[16px] font-Julius heading-two opacity-0 h-smal" >
+                    {
+                        !userData.is_member ? ("You are invited to join, the best") : ("the ground trembles and the crowd roars as you walk in")
+                    }
+                </p>
 
                 <div className="h-[165px] w-[185px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top">
                     <img src={Logo} alt='+' className="w-full h-full" />
                 </div>
 
-                <p className="text-white mt-8 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs">FORUM_GLADIATORA</p>
+                <p className={classNames(
+                    "text-white mt-2 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs",
+                    userData?.is_member && "heading-on-low"
+                )}>FORUM_GLADIATORA</p>
 
-                <button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>
+                {
+                    !userData?.is_member && (<button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>)
+                }
 
-                <p className="text-white text-[12px] font-Julius heading-last opacity-0 z-10 mt-[10px] smaller-text">You still need to apply,<br />
-                    don’t worry you have the slip </p>
+
+                <p className="text-white text-[13px] font-Julius heading-last opacity-0 z-10 mt-[10px] smaller-text w-full flex items-center justify-center">
+                    {
+                        userData?.is_member ? (
+                            <p className="w-[30%] ">
+                                Your dedication, resilience, and unwavering commitment to our shared goals have not gone unnoticed.
+                                <br></br><br></br>
+                                thank you, dear {userData?.recipient_name}, for your unwavering dedication, your indomitable spirit, and the countless ways you contribute to making our alliance a force to be reckoned with. May your swords stay sharp, your shields never falter, and may our bond grow stronger with each passing battle.
+                                <br></br><br></br>
+                                <span className="underline underline-offset-4">Onward to victory!</span>
+                            </p>
+                        ) : (
+                            <>
+                                You still need to apply,<br />
+                                don’t worry you have the slip
+                            </>
+                        )
+                    }
+
+                </p>
 
                 <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box mobile-box">
                     <div className="relative h-full w-full">
@@ -193,28 +241,56 @@ const Offer = () => {
                             <img src={MachusR} alt='a' className="w-full h-full" />
                         </div>
                     </div>
-                    <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10 mobile-col">
-                        <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
-                            <div className="w-[30px] h-[30px] time-on-small"><Online /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">24/7</p>
-                            <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS ONLINE</p>
-                        </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
-                            <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">63</p>
-                            <p className="font-Julius text-[#CB9A68] text-shadow">ACTIVE MEMBERS</p>
-                        </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
-                            <div className="w-[30px] h-[30px] helmet-on-small"><Divine /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">15</p>
-                            <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS IN TOP 50</p>
-                        </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card4 scale-to-small">
-                            <div className="w-[30px] h-[30px]"><Knowledge /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text mobile-knowledge">UNLIMITED</p>
-                            <p className="font-Julius text-[#CB9A68] text-shadow mobile-knowledge">KNOWLDEGE SHARING </p>
-                        </div>
-                    </div>
+                    {
+                        !userData?.is_member ? (
+                            <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10 mobile-col">
+                                <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
+                                    <div className="w-[30px] h-[30px] time-on-small"><Online /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">24/7</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS ONLINE</p>
+                                </div>
+                                <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
+                                    <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">63</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">ACTIVE MEMBERS</p>
+                                </div>
+                                <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
+                                    <div className="w-[30px] h-[30px] helmet-on-small"><Divine /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">15</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS IN TOP 50</p>
+                                </div>
+                                <div className="flex flex-col items-center gap-6 opacity-0 card4 scale-to-small">
+                                    <div className="w-[30px] h-[30px]"><Knowledge /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text mobile-knowledge">UNLIMITED</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow mobile-knowledge">KNOWLDEGE SHARING </p>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10 mobile-col">
+                                <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
+                                    <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">{time_since_join}</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">Served For</p>
+                                </div>
+                                <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
+                                    <div className="w-[30px] h-[30px] time-on-small"><Rank /></div>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">{userData?.rank}</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">YOUR RANK</p>
+                                </div>
+                                {
+                                    userData?.is_top_fifteen && (
+                                        <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
+                                            <div className="w-[30px] h-[30px] helmet-on-small"><Divine /></div>
+                                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">CHAMPION</p>
+                                            <p className="font-Julius text-[#CB9A68] text-shadow">you are in top 50</p>
+                                        </div>
+                                    )
+                                }
+
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ const Offer = () => {
         gsap.to('.logo', { delay: 3.2, duration: 0.4, opacity: 1, y: '-35px', ease: 'power1.inOut' });
         gsap.to('.clan', { delay: 3.2, duration: 0.4, opacity: 1, y: '-45px', ease: 'power1.inOut' });
         gsap.to('.accept-btn', { delay: 3.2, duration: 0.4, opacity: 1, y: '-10px', ease: 'power1.inOut' })
-        gsap.to('.heading-last', { delay: 3.2, duration: 0.4, opacity: 0.6, ease: 'power1.inOut' })
+        gsap.to('.heading-last', { delay: 6.8, duration: 0.4, opacity: 0.6, ease: 'power1.inOut' })
         gsap.to('.bottom-box', { delay: 3.8, duration: 0.5, opacity: 1, bottom: '0px', ease: 'power1.inOut' })
 
         gsap.to('.card1', { delay: 4.5, duration: 0.4, opacity: 1, bottom: '0px', ease: 'power1.inOut' })

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Julius';
+  src: url('../fonts/JuliusSansOne-Regular.ttf') format('ttf');
+  /* Add additional formats if needed (e.g., woff, woff2) */
+}
+
+/* Applying the font-family */
+body {
+  font-family: 'Julius', sans-serif;
+  /* Use 'JuliusSansOne-Regular' as the font-family for the entire application or specific elements */
+}
+
+.App {
+  text-align: center;
+  background: #232524;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../public/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(203, 154, 104, 1);
+}

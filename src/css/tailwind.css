@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('../fonts/JuliusSansOne-Regular.ttf') format('truetype');
+    /* Add additional formats if needed (e.g., woff, woff2) */
+}
+
+/* Applying the font-family */
+body {
+    font-family: 'JuliusSansOne-Regular', sans-serif;
+    /* Use 'JuliusSansOne-Regular' as the font-family for the entire application or specific elements */
+}

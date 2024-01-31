@@ -47,9 +47,9 @@ const Offer = () => {
         gsap.to('.heading-one', { delay: 0.8, duration: 0.8, opacity: 0.7, y: '-50px', ease: 'power1.inOut' });
         gsap.to('.heading-middle', { delay: 1.6, duration: 0.8, opacity: 0.5, y: '-65px', ease: 'power1.inOut' });
         gsap.to('.heading-two', { delay: 2.4, duration: 0.8, opacity: 0.3, y: '-70px', ease: 'power1.inOut' });
-        gsap.to('.logo', { delay: 3.2, duration: 0.4, opacity: 1, y: '-55px', ease: 'power1.inOut' });
-        gsap.to('.clan', { delay: 3.2, duration: 0.4, opacity: 1, y: '-75px', ease: 'power1.inOut' });
-        gsap.to('.accept-btn', { delay: 3.2, duration: 0.4, opacity: 1, y: '-50px', ease: 'power1.inOut' })
+        gsap.to('.logo', { delay: 3.2, duration: 0.4, opacity: 1, y: '-35px', ease: 'power1.inOut' });
+        gsap.to('.clan', { delay: 3.2, duration: 0.4, opacity: 1, y: '-45px', ease: 'power1.inOut' });
+        gsap.to('.accept-btn', { delay: 3.2, duration: 0.4, opacity: 1, y: '-10px', ease: 'power1.inOut' })
         gsap.to('.heading-last', { delay: 3.2, duration: 0.4, opacity: 0.6, ease: 'power1.inOut' })
         gsap.to('.bottom-box', { delay: 3.8, duration: 0.5, opacity: 1, bottom: '0px', ease: 'power1.inOut' })
 
@@ -176,7 +176,7 @@ const Offer = () => {
 
                 <button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn opacity-0 text-[20px] font-Julius text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>
 
-                <p className="text-white text-[12px] font-Julius heading-last opacity-0 z-10 mt-[-30px]">You still need to apply,<br />
+                <p className="text-white text-[12px] font-Julius heading-last opacity-0 z-10 mt-[10px]">You still need to apply,<br />
                     don’t worry you have the slip </p>
 
                 <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box">
@@ -186,7 +186,7 @@ const Offer = () => {
                         </div>
                     </div>
                     <div className="relative h-full w-full">
-                        <div className="h-[200px] w-[180px] z-10 absolute right-10 bottom-[218px]">
+                        <div className="h-[200px] w-[180px] z-10 absolute right-10 bottom-[100%]">
                             <img src={MachusR} alt='a' className="w-full h-full" />
                         </div>
                     </div>

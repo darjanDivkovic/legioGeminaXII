@@ -211,8 +211,8 @@ const Offer = () => {
                         </div>
                         <div className="flex flex-col items-center gap-6 opacity-0 card4 scale-to-small">
                             <div className="w-[30px] h-[30px]"><Knowledge /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">UNLIMITED</p>
-                            <p className="font-Julius text-[#CB9A68] text-shadow">KNOWLDEGE SHARING</p>
+                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text mobile-knowledge">UNLIMITED</p>
+                            <p className="font-Julius text-[#CB9A68] text-shadow mobile-knowledge">KNOWLDEGE SHARING </p>
                         </div>
                     </div>
                 </div>

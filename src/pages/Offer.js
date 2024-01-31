@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import axios from 'axios';
 import gsap from 'gsap';
 
+import '../css/Mobile.css'
+
 import Logo from '../assets/Logo.png';
 import Machus from '../assets/machus.png';
 import MachusR from '../assets/machus-r.png';
@@ -169,48 +171,47 @@ const Offer = () => {
                 <hr className="bg-white w-[30%] mx-auto my-2 mt-6 heading-middle opacity-0" />
                 <p className="text-white mt-2 text-[16px] font-Julius heading-two opacity-0">You are invited to join, the best</p>
 
-                <div className="h-[165px] w-[185px] mx-auto z-10 logo opacity-0">
+                <div className="h-[165px] w-[185px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top">
                     <img src={Logo} alt='+' className="w-full h-full" />
                 </div>
 
-                <p className="text-white mt-8 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10">FORUM_GLADIATORA</p>
+                <p className="text-white mt-8 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs">FORUM_GLADIATORA</p>
 
-                <button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn opacity-0 text-[20px] font-Julius text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>
+                <button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>
 
-                <p className="text-white text-[12px] font-Julius heading-last opacity-0 z-10 mt-[10px]">You still need to apply,<br />
+                <p className="text-white text-[12px] font-Julius heading-last opacity-0 z-10 mt-[10px] smaller-text">You still need to apply,<br />
                     don’t worry you have the slip </p>
 
-                <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box">
+                <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box mobile-box">
                     <div className="relative h-full w-full">
-                        <div className="h-[200px] w-[180px] z-10 absolute left-10 bottom-[-5px]">
+                        <div className="h-[200px] w-[180px] z-10 absolute left-10 bottom-[-5px] mobile-hide">
                             <img src={Machus} alt='a' className="w-full h-full" />
                         </div>
                     </div>
                     <div className="relative h-full w-full">
-                        <div className="h-[200px] w-[180px] z-10 absolute right-10 bottom-[100%]">
+                        <div className="h-[200px] w-[180px] z-10 absolute right-10 bottom-[100%] mobile-hide">
                             <img src={MachusR} alt='a' className="w-full h-full" />
                         </div>
                     </div>
-                    <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10">
-                        <div className="flex flex-col items-center gap-6 opacity-0 card1">
-                            <div className="w-[30px] h-[30px]"><Online /></div>
-
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide">24/7</p>
+                    <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10 mobile-col">
+                        <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
+                            <div className="w-[30px] h-[30px] time-on-small"><Online /></div>
+                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">24/7</p>
                             <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS ONLINE</p>
                         </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card2">
-                            <div className="w-[30px] h-[30px]"><Members /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide">63</p>
+                        <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
+                            <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
+                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">63</p>
                             <p className="font-Julius text-[#CB9A68] text-shadow">ACTIVE MEMBERS</p>
                         </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card3">
-                            <div className="w-[30px] h-[30px]"><Divine /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide">15</p>
+                        <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
+                            <div className="w-[30px] h-[30px] helmet-on-small"><Divine /></div>
+                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">15</p>
                             <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS IN TOP 50</p>
                         </div>
-                        <div className="flex flex-col items-center gap-6 opacity-0 card4">
+                        <div className="flex flex-col items-center gap-6 opacity-0 card4 scale-to-small">
                             <div className="w-[30px] h-[30px]"><Knowledge /></div>
-                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide">UNLIMITED</p>
+                            <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">UNLIMITED</p>
                             <p className="font-Julius text-[#CB9A68] text-shadow">KNOWLDEGE SHARING</p>
                         </div>
                     </div>

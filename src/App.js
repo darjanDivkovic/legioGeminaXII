@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Offer from './pages/Offer';
 import './css/tailwind.css';
 import './css/App.css';
-import { useCallback } from "react";
-import Particles from "react-particles";
+
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "G-TG3BG6PPD1"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   return (

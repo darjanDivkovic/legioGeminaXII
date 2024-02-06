@@ -234,7 +234,7 @@ const Offer = () => {
                     </div>
                     {
                         !userData?.is_member ? (
-                            <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-10 mobile-col">
+                            <div className="w-max flex flex-row absolute bottom-[40px] left-[50%] translate-x-[-50%] gap-[100px] mobile-col">
                                 <div className="flex flex-col items-center gap-6 opacity-0 card1 scale-to-small">
                                     <div className="w-[30px] h-[30px] time-on-small"><Online /></div>
                                     <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">24/7</p>

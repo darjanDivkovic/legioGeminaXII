@@ -9,6 +9,7 @@
         font-size: 12px;
         display: flex;
         width: 100%;
+        justify-content: space-between !important;
     }
 
     .mobile-col {
@@ -36,9 +37,8 @@
 
     .small-text {
         font-size: 12px !important;
-        border: 1px solid red;
-        margin-left: 20px;
     }
+
 
     .smaller-text {
         font-size: 12px !important;

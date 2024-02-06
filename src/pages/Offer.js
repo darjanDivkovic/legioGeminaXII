@@ -68,8 +68,8 @@ const Offer = () => {
     useEffect(() => {
         // Define the GSAP animation
         const animation = gsap.to(boxRef.current, {
-            boxShadow: '0 15px 50px -12px rgba(203,154,104,0.7)', // Example: Move the element 200 pixels to the right
-            duration: 3, // Duration of the animation in seconds
+            boxShadow: '0 15px 70px -12px rgba(186,0,0,0.7)', // Example: Move the element 200 pixels to the right
+            duration: 1.8, // Duration of the animation in seconds
             ease: 'linear', // Easing function (linear for constant speed)
             repeat: -1, // Infinite repeat
             yoyo: true, // Reverse the animation on each repeat
@@ -190,7 +190,7 @@ const Offer = () => {
                     }
                 </p>
 
-                <div className="h-[225px] w-[205px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top mt-[10px]">
+                <div className="h-[165px] w-[155px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top mt-[30px]">
                     <img src={Logo} alt='+' className="w-full h-full" />
                 </div>
 
@@ -220,7 +220,7 @@ const Offer = () => {
                 </p>
 
                 {
-                    !userData?.is_member && (<button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>)
+                    !userData?.is_member && (<button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_7px_30px_-12px_rgba(186,0,0,0.7)]">ACCEPT INVITATION</button>)
                 }
 
                 <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box mobile-box">

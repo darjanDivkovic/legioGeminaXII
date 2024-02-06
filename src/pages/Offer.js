@@ -190,21 +190,16 @@ const Offer = () => {
                     }
                 </p>
 
-                <div className="h-[165px] w-[185px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top">
+                <div className="h-[225px] w-[205px] mx-auto z-10 logo opacity-0 scale-to-mid mobile-logo-top mt-[10px]">
                     <img src={Logo} alt='+' className="w-full h-full" />
                 </div>
 
                 <p className={classNames(
-                    "text-white mt-2 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs",
+                    "text-white mt-2 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs mt-8",
                     userData?.is_member && "heading-on-low"
                 )}>FORUM_GLADIATORA</p>
 
-                {
-                    !userData?.is_member && (<button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>)
-                }
-
-
-                <p className="text-white text-[13px] font-Julius heading-last opacity-0 z-10 mt-[10px] smaller-text w-full flex items-center justify-center">
+                <p className="text-white text-[13px] font-Julius heading-last opacity-0 z-10 mt-[5px] mb- smaller-text w-full flex items-center justify-center">
                     {
                         userData?.is_member ? (
                             <p className="w-[30%] ">
@@ -215,24 +210,26 @@ const Offer = () => {
                                 <span className="underline underline-offset-4">Onward to victory!</span>
                             </p>
                         ) : (
-                            <>
-                                You still need to apply,<br />
+                            <p className="w-[400px] mb-8">
+                                You still need to apply,
                                 don’t worry you have the slip
-                            </>
+                            </p>
                         )
                     }
 
                 </p>
 
+                {
+                    !userData?.is_member && (<button ref={boxRef} onClick={() => handleOpenApplyLink()} className="accept-btn mobile-btn-top opacity-0 text-[20px] font-Julius scale-to-mid text-[#D29E6B] border rounded-full border-[#D29E6B] mx-auto z-20 bg-[#1E1E1E] bg-opacity-60 w-max py-2 px-12 shadow-[0_15px_50px_-12px_rgba(203,154,104,0.7)]">ACCEPT INVITATION</button>)
+                }
+
                 <div className="w-full h-[30vh] bg-[#1E1E1E] bg-opacity-40 absolute bottom-[-200px] opacity-0 bottom-box mobile-box">
                     <div className="relative h-full w-full">
                         <div className="h-[200px] w-[180px] z-10 absolute left-10 bottom-[-5px] mobile-hide">
-                            <img src={Machus} alt='a' className="w-full h-full" />
                         </div>
                     </div>
                     <div className="relative h-full w-full">
                         <div className="h-[200px] w-[180px] z-10 absolute right-10 bottom-[100%] mobile-hide">
-                            <img src={MachusR} alt='a' className="w-full h-full" />
                         </div>
                     </div>
                     {

@@ -197,7 +197,7 @@ const Offer = () => {
                 <p className={classNames(
                     "text-white mt-2 text-[36px] font-Julius clan opacity-0 tracking-widest text-shadow bg-none z-10 mobile-hs mt-8",
                     userData?.is_member && "heading-on-low"
-                )}>FORUM_GLADIATORA</p>
+                )}>LEGIO-XIII-GEMINA</p>
 
                 <p className="text-white text-[13px] font-Julius heading-last opacity-0 z-10 mt-[5px] mb- smaller-text w-full flex items-center justify-center">
                     {
@@ -242,13 +242,13 @@ const Offer = () => {
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
                                     <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
-                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">67 / 69</p>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">66 / 66</p>
                                     <p className="font-Julius text-[#CB9A68] text-shadow">ACTIVE MEMBERS</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
                                     <div className="w-[30px] h-[30px] helmet-on-small"><Divine /></div>
-                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">15</p>
-                                    <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS IN TOP 50</p>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text">20</p>
+                                    <p className="font-Julius text-[#CB9A68] text-shadow">GLADIATORS IN TOP 100</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card4 scale-to-small">
                                     <div className="w-[30px] h-[30px]"><Knowledge /></div>

@@ -19,6 +19,7 @@ function App() {
 
         <Routes>
           <Route path="/offer/:id" element={<Offer />} />
+          <Route path="" element={<Offer />} />
         </Routes>
       </div>
     </Router>

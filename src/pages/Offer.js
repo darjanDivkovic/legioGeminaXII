@@ -242,7 +242,7 @@ const Offer = () => {
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card2 scale-to-small">
                                     <div className="w-[30px] h-[30px] helmet-on-small-r"><Members /></div>
-                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">66 / 66</p>
+                                    <p className="font-Julius text-white text-[28px] text-shadow tracking-wide small-text p-on-small">68 / 69</p>
                                     <p className="font-Julius text-[#CB9A68] text-shadow">ACTIVE MEMBERS</p>
                                 </div>
                                 <div className="flex flex-col items-center gap-6 opacity-0 card3 scale-to-small">
